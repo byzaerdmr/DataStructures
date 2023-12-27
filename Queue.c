@@ -4,7 +4,6 @@
 struct node {
     int data;
     struct node *next;
-
 };
 
 // front&rear
@@ -16,6 +15,7 @@ int enqueue(int data){
     
      //Queue is empty
     if(front==NULL){
+        
     struct node *new=( struct node *)malloc(sizeof(struct node));
     new -> data= data;
     new -> next = NULL;
