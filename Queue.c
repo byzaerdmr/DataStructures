@@ -8,13 +8,14 @@ struct node {
 };
 
 // front&rear
-
 struct node *front = NULL;
 struct node *rear= NULL;
 
 //enqueue
 int enqueue(int data){
-    if(front==NULL){ //Queue is empty
+    
+     //Queue is empty
+    if(front==NULL){
     struct node *new=( struct node *)malloc(sizeof(struct node));
     new -> data= data;
     new -> next = NULL;
