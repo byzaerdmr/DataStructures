@@ -73,7 +73,7 @@ int main(){
     enqueue(9);
     enqueue(13);
     enqueue(4);
-    enqueue(-1);
+    enqueue(8);
 
     display();
 
