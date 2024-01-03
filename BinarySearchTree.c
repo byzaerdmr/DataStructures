@@ -22,3 +22,15 @@ struct BstNode* newNodeCreate(int value)
     return new;
 
 }
+struct BstNode* searchNode(struct BstNode* root, int target)
+{
+    if(root == NULL || root ->data==target)
+    {
+        return root;
+    }
+    if(root -> data < target){
+
+        return searchNode(root -> right, target);
+    }
+    return searchNode(root-> left, target);    
+}
