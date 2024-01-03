@@ -34,3 +34,16 @@ struct BstNode* searchNode(struct BstNode* root, int target)
     }
     return searchNode(root-> left, target);    
 }
+struct BstNode* insertNode(struct BstNode* node, int value)
+{
+    if(node==NULL){
+        return newNodeCreate(value);
+    }
+    if (value<node ->data) {
+        node->left = insertNode(node->left, value);
+    }
+    else if( value> node->data){
+        node->right=insertNode(node->right, value);
+    }
+    return node;
+}
