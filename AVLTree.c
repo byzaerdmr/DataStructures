@@ -32,7 +32,7 @@ int getBalanceFactor(struct AvlNode* node){
     return leftHeight-rightHeight;
 }
 
-struct AvlNode* rotateRight(struct AvlNode* y){
+struct AvlNode* rotateRight(struct AvlNode* y){ //sağa dönme
     struct AvlNode* x = y->left;
     struct AvlNode* T2 = x->right;
 
@@ -46,13 +46,13 @@ struct AvlNode* rotateRight(struct AvlNode* y){
     return x;
 }
 
-struct AvlNode* rotateLeft(struct AvlNode* x){
+struct AvlNode* rotateLeft(struct AvlNode* x){//sola dönme
     struct AvlNode* y = x->right;
     struct AvlNode* T2 = y->left;
 
     // Döndürme
     y->left = x;
-    x->right = T2;
+    x->right = T2;  //geçici bir alt ağacı temsil eder
 
     x->height = updateHeight(x);
     y->height = updateHeight(y);
@@ -72,12 +72,12 @@ struct AvlNode* insert(struct AvlNode* node, int data){
     else if(data > node->data)
         node->right = insert(node->right, data);
     else
-        return node; // Aynı veriye sahip düğüm zaten var, tekrar eklenmiyor
+        return node; // Aynı veriye sahip düğüm zaten var tekrar eklenmiyor
 
     // Düğümün yüksekliğini güncelle
     node->height = updateHeight(node);
 
-    // Denge faktörünü al
+    // balance faktörünü al
     int balanceFactor = getBalanceFactor(node);
 
     // Denge faktörüne göre durumu kontrol et
@@ -147,14 +147,15 @@ int main(){
     root=insert(root,15);
     root=insert(root,10);
 
-    printf("Inorder traversal after insertion:\n");
-    inOrder(root);
-
     printf("\nPostorder traversal after insertion:\n");
     postOrder(root);
 
+    
     printf("\nPreorder traversal after insertion:\n");
     preOrder(root);
+
+    printf("\nInorder traversal after insertion:\n");
+    inOrder(root);
 
     return 0;
 }
