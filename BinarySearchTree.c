@@ -10,7 +10,7 @@ int data;
 struct BstNode * left;
 struct BstNode * right;
 
-};+
+};
 
 struct BstNode* newNodeCreate(int value)
 {
