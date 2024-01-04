@@ -46,6 +46,7 @@ struct BstNode* insertNode(struct BstNode* node, int value)
     }
     return node;
 }
+
 void postOrder(struct BstNode* root)
 {
     if (root != NULL) {
@@ -103,6 +104,7 @@ struct BstNode* deleteNode(struct BstNode* root, int x)
 
         root -> right = deleteNode(root->right, temp -> data);
     }
+    
     return root;
 } 
 
