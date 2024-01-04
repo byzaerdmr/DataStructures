@@ -9,7 +9,6 @@ struct BstNode{
 int data;
 struct BstNode * left;
 struct BstNode * right;
-
 };
 
 struct BstNode* newNodeCreate(int value)
@@ -32,6 +31,7 @@ struct BstNode* searchNode(struct BstNode* root, int target)
     }
     return searchNode(root-> left, target);    
 }
+
 struct BstNode* insertNode(struct BstNode* node, int value)
 {
     if(node==NULL){
