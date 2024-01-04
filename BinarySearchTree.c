@@ -19,6 +19,7 @@ struct BstNode* newNodeCreate(int value)
     return new;
 
 }
+
 struct BstNode* searchNode(struct BstNode* root, int target)
 {
     if(root == NULL || root ->data==target)
