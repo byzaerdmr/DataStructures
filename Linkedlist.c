@@ -4,7 +4,7 @@
 typedef struct list{                                     //bağlı liste tanımı
     int data;
     struct list* next;
-}  list;
+} list;
 
 list* first=NULL;
 list* last=NULL;
