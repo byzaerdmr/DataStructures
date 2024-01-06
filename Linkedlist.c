@@ -32,7 +32,7 @@ int insert(int value){                         //bağlı listeye ekleme yapma ve
     return 0;
 }
 
-    int display(){   //bağlı listeyi yazdırma
+    int display(){       //bağlı listeyi yazdırma
 
         list* new;
         new= first;
