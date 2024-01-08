@@ -8,7 +8,7 @@ struct node {          //stack tanımı
 
 struct node *top=0;
 
-void push (int x){      //stack'e eleman ekleme 
+void push (int x){      //stack'e eleman ekleme   O(1)
 
     struct node *newnode;
     newnode=(struct node *)malloc(sizeof(struct node));
@@ -18,7 +18,7 @@ void push (int x){      //stack'e eleman ekleme
 
 }
 
-void display(){
+void display(){             //stack'teki elemanları ekrana yazdırma  O(n)
     struct node*temp;      //geçici bir temp değişkeni oluştur ve top'a eşitle
     temp=top;            
     if(top==0) {
