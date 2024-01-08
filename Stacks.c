@@ -32,7 +32,8 @@ void display(){
         }
     }
 }
-void peek(){
+
+void peek(){     //stack£in en üstündeki elemanı yazdırır
     if(top==0)
     printf("List is empty.");
     else{
