@@ -42,7 +42,7 @@ void peek(){     //stack'in en üstündeki elemanı yazdırır  O(1)
     }
 }
 
-void pop(){
+void pop(){             //eleman silme   O(1)
     struct node *temp;
     temp=top;
     if(top==0){
