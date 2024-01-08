@@ -33,7 +33,7 @@ void display(){             //stack'teki elemanları ekrana yazdırma  O(n)
     }
 }
 
-void peek(){     //stack'in en üstündeki elemanı yazdırır
+void peek(){     //stack'in en üstündeki elemanı yazdırır  O(1)
     if(top==0)
     printf("List is empty.");
     else{
