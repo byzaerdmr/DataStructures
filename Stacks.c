@@ -19,8 +19,8 @@ void push (int x){      //stack'e eleman ekleme
 }
 
 void display(){
-    struct node*temp;
-    temp=top;
+    struct node*temp;      //geçici bir temp değişkeni oluştur ve top'a eşitle
+    temp=top;            
     if(top==0) {
         printf(" List is empty. \n");
     }
