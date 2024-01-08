@@ -4,7 +4,6 @@
 struct node {          //stack tanımı
     int data;
     struct node *link;
-
 };
 
 struct node *top=0;
