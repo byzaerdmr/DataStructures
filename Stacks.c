@@ -8,7 +8,7 @@ struct node {          //stack tanımı
 
 struct node *top=0;
 
-void push (int x){
+void push (int x){      //stack'e eleman ekleme 
 
     struct node *newnode;
     newnode=(struct node *)malloc(sizeof(struct node));
