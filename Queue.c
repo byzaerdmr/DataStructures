@@ -31,9 +31,9 @@ int enqueue(int data){       //Sıraya eleman ekleme O(1)
     return 1;
 }
 
-int display(){
+int display(){    //sırayı yazdırma
 
-    //queue is empty
+    
     if(front==NULL){
         printf("Queue is empty.\n");
         return 1;
@@ -47,10 +47,9 @@ int display(){
     }
     return 1;
 }
-//dequeue
-int dequeue() {
 
-    //Queue is empty
+int dequeue() {      //eleman silme
+
     if(front==NULL){
         printf("Queue is empty. \n");
         return 1;
