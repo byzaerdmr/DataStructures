@@ -9,10 +9,8 @@ struct node {
 struct node *front = NULL;
 struct node *rear= NULL;
 
-//enqueue
-int enqueue(int data){
+int enqueue(int data){       //Sıraya eleman ekleme O(1)
     
-     //Queue is empty
     if(front==NULL){
         
     struct node *new=( struct node *)malloc(sizeof(struct node));
@@ -20,21 +18,19 @@ int enqueue(int data){
     new -> next = NULL;
 
     front=rear=new;
-    }
-
-    else{
-        struct node *new=(struct node*)malloc(sizeof(struct node));
-        new -> data = data;
-        new -> next = NULL;
+}
+     else{
+     struct node *new=(struct node*)malloc(sizeof(struct node));
+     new -> data = data;
+     new -> next = NULL;
 
         rear -> next =new;
-
-        rear=new;
-    
+        rear=new;  
     }
+    
     return 1;
 }
-//display queue
+
 int display(){
 
     //queue is empty
