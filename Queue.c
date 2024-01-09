@@ -62,6 +62,19 @@ int dequeue() {      //eleman silme
     return 1;
 }
 
+void reset() {                       //sırayı boşaltma
+    struct node *current = front;
+    struct node *next;
+
+    while (current != NULL) {
+        next = current->next;
+        free(current);
+        current = next;
+    }
+
+    front = rear = NULL;
+}
+
 int main(){
 
     enqueue(9);
@@ -83,6 +96,9 @@ int main(){
     enqueue(16);
     display();
 
+    reset();
+    display();
+    
     return 0;
 
 }
