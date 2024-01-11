@@ -47,7 +47,7 @@ struct BstNode* insertNode(struct BstNode* node, int value)
     return node;
 }
 
-void postOrder(struct BstNode* root)
+void postOrder(struct BstNode* root)    //left-right-root
 {
     if (root != NULL) {
        postOrder(root->left);
