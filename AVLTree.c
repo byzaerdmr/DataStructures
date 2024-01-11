@@ -8,35 +8,36 @@ struct AvlNode{   //AVL Ağacı Düğümü
     int height;
 };
 
-//Yeni bir AVL düğümü oluştur
-struct AvlNode* newNode(int data){
+
+struct AvlNode* newNode(int data){                                              //Yeni bir AVL düğümü oluşturur
     struct AvlNode* node=(struct AvlNode*)malloc(sizeof(struct AvlNode));
     node->data=data;
     node->right=NULL;
     node->left=NULL;
-    node->height=1; //düğüm eklediğimiz için yükseklik 1 olur
+    node->height=1;                                                              //düğüm eklediğimiz için yükseklik 1 olur
     return node;
 }
-//yüksekliği güncelleme
-int updateHeight(struct AvlNode* node){
+                                         
+int updateHeight(struct AvlNode* node){                                           //yüksekliği güncelleme
     if(node==NULL) return 0;
     int leftHeight=(node->left!=NULL) ? node->left->height : 0;
     int rightHeight=(node->right!=NULL) ? node->right->height : 0;
     return 1+ ((leftHeight>rightHeight) ? leftHeight : rightHeight);
 }
-//balance hsaplama sol alt- sağ alt
-int getBalanceFactor(struct AvlNode* node){
+
+
+int getBalanceFactor(struct AvlNode* node){                                        //balance hsaplama sol alt- sağ alt
     if(node==NULL) return 0;
     int leftHeight=(node->left!=NULL) ? node->left->height : 0;
     int rightHeight=(node->right!=NULL) ? node->right->height : 0;
     return leftHeight-rightHeight;
 }
 
-struct AvlNode* rotateRight(struct AvlNode* y){ //sağa dönme
+struct AvlNode* rotateRight(struct AvlNode* y){ 
     struct AvlNode* x = y->left;
     struct AvlNode* T2 = x->right;
 
-    // Döndürme işlemi
+   
     x->right = y;
     y->left = T2;
 
@@ -46,11 +47,11 @@ struct AvlNode* rotateRight(struct AvlNode* y){ //sağa dönme
     return x;
 }
 
-struct AvlNode* rotateLeft(struct AvlNode* x){//sola dönme
+struct AvlNode* rotateLeft(struct AvlNode* x){
     struct AvlNode* y = x->right;
     struct AvlNode* T2 = y->left;
 
-    // Döndürme
+   
     y->left = x;
     x->right = T2;  //geçici bir alt ağacı temsil eder
 
@@ -62,7 +63,7 @@ struct AvlNode* rotateLeft(struct AvlNode* x){//sola dönme
 
 
 struct AvlNode* insert(struct AvlNode* node, int data){
-    // Null kontrolü
+    
     if(node == NULL)
         return newNode(data);
 
@@ -72,13 +73,12 @@ struct AvlNode* insert(struct AvlNode* node, int data){
     else if(data > node->data)
         node->right = insert(node->right, data);
     else
-        return node; // Aynı veriye sahip düğüm zaten var tekrar eklenmiyor
+        return node;                                            // Aynı veriye sahip düğüm zaten var tekrar eklenmiyor
 
-    // Düğümün yüksekliğini güncelle
     node->height = updateHeight(node);
 
-    // balance faktörünü al
-    int balanceFactor = getBalanceFactor(node);
+   
+    int balanceFactor = getBalanceFactor(node);               // balance faktörünü al
 
     // Denge faktörüne göre durumu kontrol et
     if(balanceFactor > 1){
