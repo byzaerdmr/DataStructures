@@ -117,7 +117,6 @@ struct BstNode* deleteNode(struct BstNode* root, int x){  //düğüm silme
     return root;
 }
 
-
 int main(){
 
 struct BstNode* root = NULL;
