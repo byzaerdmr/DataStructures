@@ -56,7 +56,7 @@ void postOrder(struct BstNode* root)
     }
 }
 
-void inOrder(struct BstNode* root)
+void inOrder(struct BstNode* root)  // left-root-right
 {
     if(root!=NULL) {
         inOrder(root->left);
@@ -65,7 +65,7 @@ void inOrder(struct BstNode* root)
     }
 }
 
-void preOrder(struct BstNode* root)
+void preOrder(struct BstNode* root)    //root-left-right
 {
     if(root!=NULL){
         printf("%d", root->data);
