@@ -78,23 +78,26 @@ void postorder(struct BstNode * root){ // left -> right -> root
     printf("%d ", root -> data);
 }
 
-struct BstNode* deleteNode(struct BstNode* root, int x)  //düğüm silme
-{
+struct BstNode* deleteNode(struct BstNode* root, int x){  //düğüm silme
+    
     if (root == NULL)
         return root;
  
     if (x > root->data) {
         root->right = deleteNode(root->right, x);
     }
+        
     else if (x < root->data) {
         root->left = deleteNode(root->left, x);
     }
+        
     else {
         if (root->left == NULL) {
             struct BstNode* temp = root->right;
             free(root);
             return temp;
         }
+            
         else if (root->right == NULL) {
       		struct BstNode* temp = root->left;
       		free(root);
@@ -102,6 +105,7 @@ struct BstNode* deleteNode(struct BstNode* root, int x)  //düğüm silme
     	}
         
         struct BstNode* temp = root->right; //node iki çocuğa sahipse
+        
         while (temp->left != NULL) {
             temp = temp->left;
         }
