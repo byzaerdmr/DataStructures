@@ -128,16 +128,19 @@ while(1){
     scanf("%d", &choice); 
 
     switch(choice){
+        
         case 1:
             printf("Enter the number you want to add : ");
             scanf("%d", &x);
             root = insert(root, x);
             break;
+        
         case 2:
             printf("Enter the number you want to delete : ");
             scanf("%d", &x);
             root = deleteNode(root, x);
             break;
+        
         case 3:
             printf("Preorder : ");
             preorder(root);
@@ -146,6 +149,7 @@ while(1){
             printf("\nPostorder : ");
             postorder(root);
             break;
+        
         case 4:
             printf("Enter the number you want to search : ");
             scanf("%d", &x);
@@ -156,8 +160,10 @@ while(1){
                 printf("Not Found\n");
             }
             break;
+        
         case 5:
             exit(0);
+        
         default:
             printf("Wrong choice\n");
      }
