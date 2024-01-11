@@ -19,7 +19,9 @@ struct AvlNode* newNode(int data){                                              
 }
                                          
 int updateHeight(struct AvlNode* node){                                           //yüksekliği güncelleme
-    if(node==NULL) return 0;
+    if(node==NULL) 
+        return 0;
+    
     int leftHeight=(node->left!=NULL) ? node->left->height : 0;
     int rightHeight=(node->right!=NULL) ? node->right->height : 0;
     return 1+ ((leftHeight>rightHeight) ? leftHeight : rightHeight);
