@@ -29,7 +29,9 @@ int updateHeight(struct AvlNode* node){                                         
 
 
 int getBalanceFactor(struct AvlNode* node){                                        //balance hsaplama sol alt- sağ alt
-    if(node==NULL) return 0;
+    if(node==NULL)
+        return 0;
+    
     int leftHeight=(node->left!=NULL) ? node->left->height : 0;
     int rightHeight=(node->right!=NULL) ? node->right->height : 0;
     return leftHeight-rightHeight;
