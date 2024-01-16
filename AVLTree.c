@@ -8,7 +8,6 @@ struct AvlNode{   //AVL Ağacı Düğümü
     int height;
 };
 
-
 struct AvlNode* newNode(int data){                                              //Yeni bir AVL düğümü oluşturur
     struct AvlNode* node=(struct AvlNode*)malloc(sizeof(struct AvlNode));
     node->data=data;
