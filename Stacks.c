@@ -4,7 +4,7 @@
 struct node{   //satck tanımı 
     
 int data;
-struct nde *link;
+struct node *link;
 };
 
 
