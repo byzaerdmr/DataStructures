@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct node {          //stack tanımı
-    int data;
-    struct node *link;
+struct node{   //satck tanımı 
+    
+int data;
+struct nde *link;
 };
+
 
 struct node *top=0;
 
