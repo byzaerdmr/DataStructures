@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct node{   //satck tanımı 
+struct node{   //stack tanımı 
     
 int data;
 struct node *link;
