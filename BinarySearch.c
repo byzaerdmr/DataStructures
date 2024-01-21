@@ -1,8 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-
-
 #include <stdio.h> 
 
 int search(int arr[], int N, int x)
