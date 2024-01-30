@@ -106,3 +106,17 @@ int main(){
     }
     return 0;
 }
+
+/*
+int main(){
+    char c;
+    while((c= getchar()) != '\n')
+    push (c);
+
+    while (sp>0)
+    printf("%c", pop());
+
+    printf("\n");
+    return 0;
+}*/
+
